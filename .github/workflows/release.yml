@@ -25,4 +25,4 @@ jobs:
       uses: actions/upload-artifact@v1
       with:
         name: DDBlocks.Application artifact 
-        path: ./src/DDBlocks.Application/bin/Release/DDBlocks.Application.${{ github.event.release.tag_name }}.nupkg
+        path: ./src/DDDBlocks.Application/bin/Release/DDBlocks.Application.${{ github.event.release.tag_name }}.nupkg
