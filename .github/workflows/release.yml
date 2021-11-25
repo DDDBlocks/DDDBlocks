@@ -18,7 +18,7 @@ jobs:
     - name: Restore dependencies
       run: dotnet restore
     - name: Create NuGet Package
-      run: dotnet pack -c Release /p:Version=${{ github.event.tag_name }} /p:PackageReleaseNotes="See https://github.com/DDDBlocks/DDDBlocks/releases/tag/${{ github.event.release.tag_name }}"
+      run: dotnet pack -c Release /p:Version=${{ github.event.release.tag_name }} /p:PackageReleaseNotes="See https://github.com/DDDBlocks/DDDBlocks/releases/tag/${{ github.event.release.tag_name }}"
     - name: Test
       run: dotnet test --no-build --verbosity normal
     - name: Archieve NuGet Package
