@@ -1,4 +1,4 @@
-name: Release NuGet artifacts
+name: NuGet packages delivery on release
 
 on:
   release:
@@ -26,3 +26,6 @@ jobs:
       with:
         name: DDDBlocks.Application artifact 
         path: ./src/DDDBlocks.Application/bin/Release/DDDBlocks.Application.${{ github.event.release.tag_name }}.nupkg
+    
+    - name: Publish packages to NuGet
+      run: dotnet nuget push **/*.nupkg --api-key ${{ secrets.NUGETAPIKEY }} --source https://api.nuget.org/v3/index.json
