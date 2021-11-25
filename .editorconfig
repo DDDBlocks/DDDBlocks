@@ -164,3 +164,5 @@ insert_final_newline=false
 dotnet_diagnostic.SA1000.severity=silent
 dotnet_diagnostic.SA1308.severity=silent
 dotnet_diagnostic.SA1311.severity=silent
+dotnet_diagnostic.SA1313.severity=silent
+dotnet_diagnostic.SA1009.severity=silent
