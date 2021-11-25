@@ -24,5 +24,5 @@ jobs:
     - name: Archieve NuGet Package
       uses: actions/upload-artifact@v1
       with:
-        name: DDBlocks.Application artifact 
-        path: ./src/DDDBlocks.Application/bin/Release/DDBlocks.Application.${{ github.event.release.tag_name }}.nupkg
+        name: DDDBlocks.Application artifact 
+        path: ./src/DDDBlocks.Application/bin/Release/DDDBlocks.Application.${{ github.event.release.tag_name }}.nupkg
