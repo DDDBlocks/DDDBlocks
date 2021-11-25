@@ -1,0 +1,26 @@
+name: Release NuGet artifacts
+
+on:
+  release:
+    types: [published]
+      
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Setup .NET
+      uses: actions/setup-dotnet@v1
+    - name: Restore dependencies
+      run: dotnet restore
+    - name: Create NuGet Package
+      run: dotnet pack -c Release /p:Version=${{ github.event.tag_name }} /p:PackageReleaseNotes="See https://github.com/DDDBlocks/DDDBlocks/releases/tag/${{ github.event.release.tag_name }}"
+    - name: Test
+      run: dotnet test --no-build --verbosity normal
+    - name: Archieve NuGet Package
+      uses: actions/upload-artifact@v1
+      with:
+        name: DDBlocks.Application artifact 
+        path: ./DDBlocks.Application/bin/Release/DDBlocks.Application.${{ github.event.release.tag_name }}.nupkg
