@@ -22,7 +22,7 @@ jobs:
     - name: Test
       run: dotnet test --no-build --verbosity normal
     - name: Archieve NuGet Package
-      uses: actions/upload-artifact@v2
+      uses: actions/upload-artifact@v2.x
       with:
         name: DDDBlocks.Application artifact 
         path: ./src/DDDBlocks.Application/bin/Release/DDDBlocks.Application.${{ github.event.release.tag_name }}.nupkg
