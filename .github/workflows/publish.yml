@@ -1,4 +1,4 @@
-name: Publish packages to NuGet
+name: Publish NuGet packages
 
 on:
   release:
@@ -15,10 +15,8 @@ jobs:
       uses: actions/setup-dotnet@v1
       with:
         dotnet-version: 6.x
-    
     - name: Restore dependencies
       run: dotnet restore
-    
     - name: Create NuGet Package
       run: dotnet pack -c Release /p:Version=${{ github.event.release.tag_name }} /p:PackageReleaseNotes="See https://github.com/DDDBlocks/DDDBlocks/releases/tag/${{ github.event.release.tag_name }}"
     - name: Test
@@ -28,6 +26,6 @@ jobs:
       with:
         name: DDDBlocks.Application artifact 
         path: ./src/DDDBlocks.Application/bin/Release/DDDBlocks.Application.${{ github.event.release.tag_name }}.nupkg
-
+    
     - name: Publish packages to NuGet
       run: dotnet nuget push **/*.nupkg --api-key ${{ secrets.NUGETAPIKEY }} --source https://api.nuget.org/v3/index.json
