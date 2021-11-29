@@ -11,21 +11,20 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
+    
     - name: Setup .NET
       uses: actions/setup-dotnet@v1
       with:
         dotnet-version: 6.x
+        
     - name: Restore dependencies
       run: dotnet restore
-    - name: Create NuGet Package
+
+    - name: Run tests
+      run: dotnet test --verbosity normal
+
+    - name: Create NuGet packages
       run: dotnet pack -c Release /p:Version=${{ github.event.release.tag_name }} /p:PackageReleaseNotes="See https://github.com/DDDBlocks/DDDBlocks/releases/tag/${{ github.event.release.tag_name }}"
-    - name: Test
-      run: dotnet test --no-build --verbosity normal
-    - name: Archieve NuGet Package
-      uses: actions/upload-artifact@v2.2.4
-      with:
-        name: DDDBlocks.Application artifact 
-        path: ./src/DDDBlocks.Application/bin/Release/DDDBlocks.Application.${{ github.event.release.tag_name }}.nupkg
     
     - name: Publish packages to NuGet
       run: dotnet nuget push **/*.nupkg --api-key ${{ secrets.NUGETAPIKEY }} --source https://api.nuget.org/v3/index.json
