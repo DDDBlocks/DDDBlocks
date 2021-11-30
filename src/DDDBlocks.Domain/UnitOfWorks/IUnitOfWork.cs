@@ -1,0 +1,19 @@
+﻿using System.Threading;
+using System.Threading.Tasks;
+
+namespace DDDBlocks.Domain.UnitOfWorks;
+
+/// <summary>
+/// Abstraction for DDD unit of work pattern.
+/// <para><see href="http://www.reflectivesoftware.com/2015/07/26/unit-of-work-entity-framework-unity-ddd-hexagonal-onion/">Read more about Unit of work pattern</see>.</para>
+/// </summary>
+public interface IUnitOfWork
+{
+    /// <summary>
+    /// Domain operation finishing.
+    /// <para>By default, it rises all the domain events from domain entity objects.</para>
+    /// </summary>
+    /// <param name="cancellationToken">Cancellation token for operation discarding.</param>
+    /// <returns>Status of operation.</returns>
+    Task<int> CommitAsync(CancellationToken cancellationToken = default);
+}
