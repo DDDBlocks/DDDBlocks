@@ -5,6 +5,7 @@
     <Nullable>enable</Nullable>
     <EnableNETAnalyzers>true</EnableNETAnalyzers>
     <LangVersion>10</LangVersion>
+    <AnalysisLevel>6.0</AnalysisLevel>
   </PropertyGroup>
 
   <ItemGroup>
