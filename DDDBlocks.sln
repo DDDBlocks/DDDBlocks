@@ -16,6 +16,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DDDBlocks.Persistence.EntityFrameworkCore", "src\DDDBlocks.Persistence.EntityFrameworkCore\DDDBlocks.Persistence.EntityFrameworkCore.csproj", "{E540EAB8-2088-468D-A4BB-CA75BB7D1520}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{48A584C7-8BDC-4DE9-91BC-5264A2C631A6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DDDBlocks.Persistence.EntityFrameworkCore.Test", "test\DDDBlocks.Persistence.EntityFrameworkCore.Test\DDDBlocks.Persistence.EntityFrameworkCore.Test.csproj", "{C30542B7-DEE4-4003-B291-EAC636DDD9A2}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -38,9 +42,16 @@ Global
 		{E540EAB8-2088-468D-A4BB-CA75BB7D1520}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E540EAB8-2088-468D-A4BB-CA75BB7D1520}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E540EAB8-2088-468D-A4BB-CA75BB7D1520}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C30542B7-DEE4-4003-B291-EAC636DDD9A2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C30542B7-DEE4-4003-B291-EAC636DDD9A2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C30542B7-DEE4-4003-B291-EAC636DDD9A2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C30542B7-DEE4-4003-B291-EAC636DDD9A2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{C30542B7-DEE4-4003-B291-EAC636DDD9A2} = {48A584C7-8BDC-4DE9-91BC-5264A2C631A6}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {81421BCB-C9EA-4095-A7BA-492D6C892F8B}
