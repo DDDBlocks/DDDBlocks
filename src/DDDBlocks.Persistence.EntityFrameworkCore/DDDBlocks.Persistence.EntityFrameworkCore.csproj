@@ -22,7 +22,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\src\DDDBlocks.Infrastructure\DDDBlocks.Infrastructure.csproj" />
+    <ProjectReference Include="..\DDDBlocks.Infrastructure\DDDBlocks.Infrastructure.csproj" />
   </ItemGroup>
 
 </Project>
